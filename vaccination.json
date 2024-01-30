@@ -1,0 +1,107 @@
+{
+    "resourceType": "Immunization",
+    "id": "",
+    "meta": {
+        "profile": [
+            "https://www.ehealth.fgov.be/standards/fhir/vaccination/StructureDefinition/be-vaccination"
+        ]
+    },
+    "identifier": {
+        "system": " https://www.orgclient.com/example/uri/identifiersystem ",
+        "value": "a54b5223-4de3-4957-baf3-24ee880fa2e5"
+    },
+    "contained": [
+        {
+            "resourceType": "Location",
+            "id": "a6e5176a-ef08-427a-b517-d8e40f563da0",
+            "meta": {
+                "profile": [
+                    "http://hl7.org/fhir/StructureDefinition/Location"
+                ]
+            },
+            "name": "Cabinet privé",
+            "type": [
+                {
+                    "coding": [
+                        {
+                            "system": "https://www.ehealth.fgov.be/standards/fhir/vaccination/CodeSystem/be-cs-care-location",
+                            "code": "workplace"
+                        }
+                    ]
+                }
+            ],
+            "address": {
+                "city": "Namur",
+                "postalCode": "5000",
+                "country": "BEL"
+            }
+        },
+        {
+            "resourceType": "Encounter",
+            "id": "1d75919e-5065-49f6-9db7-b9117c82de47",
+            "meta": {
+                "profile": [
+                    "http://hl7.org/fhir/StructureDefinition/Encounter"
+                ]
+            },
+            "status": "finished",
+            "class": {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+                "code": "AMB"
+            },
+            "location": [
+                {
+                    "location": {
+                        "reference": "#a6e5176a-ef08-427a-b517-d8e40f563da0"
+                    }
+                }
+            ]
+        }
+    ],
+    "text": {
+        "status": "extensions",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Immunization</b><a name=\"aymeric-rota1\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Immunization &quot;aymeric-rota1&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-be-vaccination.html\">BeVaccination</a></p></div><p><b>BeExtRecorder</b>: <a href=\"Organization-org-regional-child-care-agency.html\">Organization/org-regional-child-care-agency</a> &quot;Regional Child Care Agency&quot;</p><p><b>status</b>: completed</p><p><b>vaccineCode</b>: Rotavirus vaccine <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#871761004)</span></p><p><b>patient</b>: <span/></p><p><b>occurrence</b>: 2020-04-06</p><p><b>recorded</b>: 2020-04-06</p><p><b>doseQuantity</b>: 1</p><h3>Performers</h3><table class=\"grid\"><tr><td>-</td><td><b>Actor</b></td></tr><tr><td>*</td><td><span/></td></tr></table></div>"
+    },
+    "extension": [
+        {
+            "url": "https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-ext-recorder",
+            "valueReference": {
+                "reference": "Organization/org-regional-child-care-agency"
+            }
+        }
+    ],
+    "status": "completed",
+    "vaccineCode": {
+        "coding": [
+            {
+                "system": "http://snomed.info/sct",
+                "code": "871761004"
+            }
+        ]
+    },
+    "patient": {
+        "identifier": {
+            "system": "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin",
+            "value": "20020142173"
+        }
+    },
+    "occurrenceDateTime": "2020-04-06",
+    "recorded": "2020-04-06",    
+    "doseQuantity": {
+        "value": 1
+    },
+    "encounter": {
+        "reference": "#1d75919e-5065-49f6-9db7-b9117c82de47"
+    },
+    "performer": [
+        {
+            "actor": {
+                "type": "Practitioner",
+                "identifier": {
+                    "system": "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin",
+                    "value": "69062100976"
+                }
+            }
+        }
+    ]
+}
